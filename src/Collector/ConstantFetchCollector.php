@@ -147,7 +147,7 @@ final class ConstantFetchCollector implements Collector
     {
         $docComment = $node->getDocComment();
 
-        if ($docComment === null) {
+        if ($docComment === null || !str_contains($docComment->getText(), '::')) {
             return;
         }
 
